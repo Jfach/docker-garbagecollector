@@ -1,10 +1,9 @@
-FROM python:2
+FROM ubuntu
 
-ADD ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-2.4.44.tgz
+RUN apt-get update
+
+RUN apt-get install -y git python-dev python-pip libldap2-dev libsasl2-dev libssl-dev
 
 RUN git clone https://github.com/Jfach/garbagecollector.git
 
 RUN pip install -r /garbagecollector/requirements.txt
-
-
-
