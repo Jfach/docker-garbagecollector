@@ -8,6 +8,8 @@ RUN git clone https://github.com/Jfach/garbagecollector.git
 
 RUN pip install -r /garbagecollector/requirements.txt
 
-COPY seeds/ad_seed.txt garbagecollector/scripts/seeds/ad_seed.txt
+COPY configuration/ad_seed.txt garbagecollector/scripts/seeds/ad_seed.txt
 
-COPY seeds/net_seed.txt garbagecollector/scripts/seeds/net_seed.txt
+COPY configuration/net_seed.txt garbagecollector/scripts/seeds/net_seed.txt
+
+COPY configuration/config.yaml garbagecollector/scripts/resources/config.yaml
